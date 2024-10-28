@@ -20,7 +20,7 @@ To be used as biasing CVs, the coordination numbers are defined as smooth functi
 
 $$
 \begin{equation}
-n_{\text{O}_\text{x}} = \sum_{\lbrace\text{O}_\text{x}\rbrace} s(r_{\text{Mg–O}_\text{x}})
+n_\mathrm{O_x} = \sum_{\lbrace\mathrm{O_x}\rbrace} s(r_\mathrm{Mg\textnormal{–}O_x})
 \end{equation}
 $$
 
