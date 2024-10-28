@@ -20,7 +20,7 @@ To be used as biasing CVs, the coordination numbers are defined as smooth functi
 
 $$
 \begin{equation}
-n_{\text{O}_\text{x}} = \sum_{\{\text{O}_\text{x}\}} s(r_{\text{Mg–O}_\text{x}})
+n_{\text{O}_\text{x}} = \sum_{\lbrace\text{O}_\text{x}\rbrace} s(r_{\text{Mg–O}_\text{x}})
 \end{equation}
 $$
 
@@ -28,7 +28,7 @@ where $s(r)$ is a switching function between 1 and 0. In the following we will u
 
 $$
 \begin{equation}
-s(r) = \left\{
+s(r) = \left\lbrace
     \begin{array}{ll}
         1 & \text{if }r \le d_0 \\
         0.5\left(\cos(\frac{r - d_0}{r_0}\pi) + 1\right)  & \text{if }d_0 \lt r \le d_0 + r_0 \\
@@ -38,13 +38,16 @@ s(r) = \left\{
 \end{equation}
 $$
 
-with parameters $d_0 = 0.18~\text{nm}$ (to include with some margin the Mg—O<sub>W</sub> and Mg—O<sub>P</sub> equilibrium distance in the first shell, $0.21~\text{nm}$) and $r_0 = 0.24~\text{nm}$ (to reach the density peak of the second hydration shell).
+with parameters $d_0 = 0.18~\text{nm}$ (to include with some margin the Mg—O<sub>W</sub> and Mg—O<sub>P</sub> equilibrium distance in the first shell, $r_\text{eq} = 0.21~\text{nm}$) and $r_0 = 0.24~\text{nm}$ (to reach the density peak of the second hydration shell).
+
+> [!NOTE] 
+> Since we are using a $d_0$ slightly below the equilibrium distance in the first shell ($r_\text{eq}$), we can rescale the final value by $s(r_\text{eq})^{-1} = 1.039661$ to recover "nice" integer values for the coordination states.
 
 ## Implementation
 
 ### Simulation set-up
 
-<center><img src="UU_mg.png" alt="Rendering of a magnesium ion bound to diuridine non-bridging phosphate oxygen." width="40%"/></center>
+<center><img src="diuridine/UU_mg.png" alt="Rendering of a magnesium ion bound to diuridine non-bridging phosphate oxygen." width="40%"/></center>
 
 We provide as input files:
 - `input.gro`: equilibrated simulation box with a diuridine molecule and a single Mg²⁺ ion in water
@@ -140,7 +143,7 @@ This should generate about 4 Gb of data and take a couple of hours on a GPU-acce
 
 ## Analysis
 
-Once the simulation is completed, we can analyze the free-energy landscape on the selected CV-space. One way of doing that is to trust the summed Gaussian hills as the opposite of the converged free-energy landscape. A somewhat more precise (yet simple) way is to reweight the entire trajectory assuming it was generated with the final metadynamics bias [[#branduardi, #schafer]](#references).
+Once the simulation is completed, we can analyze the free-energy landscape on the selected CV-space. One way of doing that is to trust the summed Gaussian hills as the opposite of the converged free-energy landscape. A somewhat more precise (yet simple) way is to reweight the entire trajectory assuming it was generated with the final metadynamics bias [[2, 3]](#references).
 
 ### Instructions
 
@@ -165,6 +168,9 @@ You should obtain something like that:
 ![Metadynamics timeseries figure](solutions/metad_timeseries.png)
 
 ![Metadynamics free-energy surface figure](solutions/metad_fes.png)
+
+> [!NOTE]
+> On these plots, the raw values for $n_{\text{O}_\text{P}}$ and $n_{\text{O}_\text{W}}$ have been [scaled to integral values](#description-of-the-approach).
 
 We can see that the metadynamics covered most of the space within the restraints. The reweighting overall agrees with the summed hills FES but resolves better sharp features that are otherwise smoothed by the chosen Gaussian $\sigma$-value. The deep band on the left (at $n_{O_P} = 0$) is the unbound state. A pre-bound (or outer-sphere bound) state is visible for $n_{O_W} \approx 6$ and small non-zero values of $n_{O_P}$, and is separated from the bound state ($n_{O_W} \approx 5$ and $n_{O_P} \approx 1$) by a minimum free-energy path whose saddle point is located around a 7-coordinated transition state ($n_{O_W} \approx 6$, $n_{O_P} \approx 1$). This corresponds to an associative interchange (*I<sub>a</sub>*) mechanism already observed for this force-field [[4]](#references).
 
