@@ -170,9 +170,9 @@ You should obtain something like that:
 ![Metadynamics free-energy surface figure](solutions/metad_fes.png)
 
 > [!NOTE]
-> On these plots, the raw values for $n_{\text{O}_\text{P}}$ and $n_{\text{O}_\text{W}}$ have been [scaled to integral values](#description-of-the-approach).
+> On these plots, the raw values for $n_\mathrm{O_P}$ and $n_\mathrm{O_W}$ have been [scaled to integral values](#description-of-the-approach).
 
-We can see that the metadynamics covered most of the space within the restraints. The reweighting overall agrees with the summed hills FES but resolves better sharp features that are otherwise smoothed by the chosen Gaussian $\sigma$-value. The deep band on the left (at $n_{O_P} = 0$) is the unbound state. A pre-bound (or outer-sphere bound) state is visible for $n_{O_W} \approx 6$ and small non-zero values of $n_{O_P}$, and is separated from the bound state ($n_{O_W} \approx 5$ and $n_{O_P} \approx 1$) by a minimum free-energy path whose saddle point is located around a 7-coordinated transition state ($n_{O_W} \approx 6$, $n_{O_P} \approx 1$). This corresponds to an associative interchange (*I<sub>a</sub>*) mechanism already observed for this force-field [[4]](#references).
+We can see that the metadynamics covered most of the space within the restraints. The reweighting overall agrees with the summed hills FES but resolves better sharp features that are otherwise smoothed by the chosen Gaussian $\sigma$-value. The deep band on the left (at $n_\mathrm{O_P} = 0$) is the unbound state. A pre-bound (or outer-sphere bound) state is visible for $n_\mathrm{O_W} \approx 6$ and small non-zero values of $n_\mathrm{O_P}$, and is separated from the bound state ($n_\mathrm{O_W} \approx 5$ and $n_\mathrm{O_P} \approx 1$) by a minimum free-energy path whose saddle point is located around a 7-coordinated transition state ($n_\mathrm{O_W} \approx 6$, $n_\mathrm{O_P} \approx 1$). This corresponds to an associative interchange (*I<sub>a</sub>*) mechanism already observed for this force-field [[4]](#references).
 
 > [!NOTE] 
 > The experimentally suggested mechanism is an interchange dissociative one (*I<sub>d</sub>*), suggesting that the observed associative pathway is an artifact of the particular force field we use.
