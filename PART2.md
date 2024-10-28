@@ -44,8 +44,10 @@ The choice of $U_\text{bias}$ is rather free, but we need to take some constrain
 Here is our proposition. For convenience, we defined new variables $X$ and $Y$ as:
 
 $$
-X = n_{O_P} - n_{O_W} + 6 \\
-Y = n_{O_P} + n_{O_W} - 6
+\begin{align}
+X &= n_{O_P} - n_{O_W} + 6 \\
+Y &= n_{O_P} + n_{O_W} - 6
+\end{align}
 $$
 
 where $X$ can be interpreted as the advancement of the O<sub>W</sub>/O<sub>P</sub> exchange ($X = 0$ is the unbound state, $X = 1$ represents the addition of O<sub>P</sub> to the inner-sphere, and $X = 2$ complete departure of the supranumerary O<sub>W</sub> atom) and $Y$ is the excess coordination relative to the basal $n = 6$.
