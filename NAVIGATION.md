@@ -3,7 +3,7 @@ flowchart LR
 intro[Introduction]
 metad[Metadynamics tutorial]
 part1[Part 1: 2D Metadynamics]
-inb[Part 2: Bias design (Interactive notebook)]
+inb[Part 2: Bias design - Interactive notebook]
 validate[Part 3: Bias implementation and validation]
 metad -.-> part1
 intro ==> part1
