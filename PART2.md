@@ -52,7 +52,7 @@ $$
 
 where $X$ can be interpreted as the advancement of the O<sub>W</sub>/O<sub>P</sub> exchange ($X = 0$ is the unbound state, $X = 1$ represents the addition of O<sub>P</sub> to the inner-sphere, and $X = 2$ complete departure of the supranumerary O<sub>W</sub> atom) and $Y$ is the excess coordination relative to the basal $n = 6$.
 
-![Bias design figure](solutions/bias_design_xy.png)
+![Bias design figure](solutions/figures/bias_design_xy.png)
 
 <details><summary>See the functional form details</summary>
 
@@ -62,7 +62,7 @@ X' = X + 0.12 (1 - \cos(X\pi)) \\
 Y' = 2.8Y - 0.7(1 - \cos(X\pi))
 $$
 
-![Bias design figure](solutions/bias_design_XY.png)
+![Bias design figure](solutions/figures/bias_design_XY.png)
 </details>
 
 Your solution will probably look different, and that's OK since precise shape of the barrier should not matter too much.
@@ -117,7 +117,7 @@ PRINT ARG=nop,now,dop.lowest,uwall.bias,bias.bias STRIDE=500 FILE=bias.COLVAR
 
 ### Results
 
-![Bias test timeseries figure](solutions/bias_timeseries.png)
+![Bias test timeseries figure](solutions/figures/bias_timeseries.png)
 
 ## Reweighting
 

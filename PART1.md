@@ -165,9 +165,9 @@ Once the simulation is completed, we can analyze the free-energy landscape on th
 
 You should obtain something like that:
 
-![Metadynamics timeseries figure](solutions/metad_timeseries.png)
+![Metadynamics timeseries figure](solutions/figures/metad_timeseries.png)
 
-![Metadynamics free-energy surface figure](solutions/metad_fes.png)
+![Metadynamics free-energy surface figure](solutions/figures/metad_fes.png)
 
 > [!NOTE]
 > On these plots, the raw values for $n_\mathrm{O_P}$ and $n_\mathrm{O_W}$ have been [scaled to integral values](#description-of-the-approach).
