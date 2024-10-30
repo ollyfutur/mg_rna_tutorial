@@ -105,7 +105,7 @@ gmx grompp -f run.mdp -p topol.top -c input.gro -o run.tpr -maxwarn 1
 ### Template PLUMED input file
 
 ```plumed
-#SOLUTIONFILE=solutions/plumed_metad.dat
+#SOLUTIONFILE=solutions/inputs/plumed_metad.dat
 # Metadynamics for Mg²⁺ binding with diuridine's non-bridging phosphate oxygen atoms
 
 mg: GROUP __FILL__

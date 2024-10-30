@@ -1,0 +1,28 @@
+# Metadynamics for Mg²⁺ binding with diuridine's non-bridging phosphate oxygen atoms
+
+mg: GROUP ATOMS=60
+op: GROUP NDX_FILE=index_diuridine.ndx NDX_GROUP=O_Phosphate
+ow: GROUP NDX_FILE=index_diuridine.ndx NDX_GROUP=O_Water
+
+nop: COORDINATION ...
+   GROUPA=mg
+   GROUPB=op
+   SWITCH={COSINUS D_0=0.18 R_0=0.24}
+...
+
+now: COORDINATION ...
+   GROUPA=mg
+   GROUPB=ow
+   SWITCH={COSINUS D_0=0.18 R_0=0.24}
+...
+
+metad: METAD ...
+   ARG=nop,now
+   SIGMA=0.05,0.05 
+   HEIGHT=1 PACE=500 TEMP=300 BIASFACTOR=15 
+...
+
+lwall: LOWER_WALLS ARG=now AT=4 KAPPA=500
+uwall: UPPER_WALLS ARG=now AT=7 KAPPA=500
+
+PRINT ARG=nop,now,metad.bias,lwall.bias,uwall.bias STRIDE=500 FILE=metad.COLVAR

@@ -83,6 +83,38 @@ Once you are satisfied with functional form of your bias, you can implement it i
 
 5) In a Python notebook, plot the timeseries for the two CVs of interest as well as $U_\text{bias}(t)$.
 
+### Template PLUMED file
+
+```plumed
+# Barrier-flattening bias for accelerating Mg (un)binding to phosphate oxygen
+
+mg: GROUP __FILL__
+op: GROUP __FILL__
+ow: GROUP __FILL__
+
+nop: COORDINATION ...
+   __FILL__
+...
+
+now: COORDINATION ...
+   __FILL__
+...
+
+dop: DISTANCES ...
+   __FILL__
+...
+
+uwall: UPPER_WALLS __FILL__
+
+bias_fn: CUSTOM ...
+   __FILL__
+...
+
+bias: BIASVALUE __FILL__
+
+PRINT ARG=nop,now,dop.lowest,uwall.bias,bias.bias STRIDE=500 FILE=bias.COLVAR
+```
+
 ### Results
 
 ![Bias test timeseries figure](solutions/bias_timeseries.png)
