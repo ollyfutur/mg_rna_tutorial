@@ -86,8 +86,8 @@ Once you are satisfied with functional form of your bias, you can implement it i
 ### Template PLUMED file
 
 ```plumed
+#SOLUTIONFILE=solutions/inputs/plumed_bias.dat
 # Barrier-flattening bias for accelerating Mg (un)binding to phosphate oxygen
-
 mg: GROUP __FILL__
 op: GROUP __FILL__
 ow: GROUP __FILL__
