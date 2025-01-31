@@ -54,7 +54,7 @@ where $X$ can be interpreted as the advancement of the O<sub>W</sub>/O<sub>P</su
 
 ![Bias design figure](solutions/figures/bias_design_xy.png)
 
-<details><summary>See the functional form details</summary>
+<details><summary>(Click to) See the functional form details.</summary>
 
 $$
 U_\text{bias}(X', Y') = -1.875 \cdot\theta(X')\theta(2-X')\theta(Y')\theta(2 - Y')(1 - \cos(X'\pi))(1 - \cos(Y'\pi)) \\
@@ -151,6 +151,6 @@ We can interpret $N_\text{Kish}$ as the effective number of sample frames that c
 
 1) Compute the Kish effective sample size corresponding to reweighting the simulation to the original force field.
 
-> <details><summary><b>Q:</b> How do you expect the Kish size to vary when increasing the number of magnesium ions (each ion contributing one bias potential) and RNA binding sites?</b></summary>
+> <details><summary><b>Q:</b> How do you expect the Kish size to vary when increasing the number of magnesium ions (each ion contributing one bias potential) and RNA binding sites?</summary>
 > <b>A</b>: Assuming independent Mg<sup>2+</sup>/binding site pairs, we expect the Kish size to decrease faster than linearly with the number of ions. This is because, for a frame to have a significant weight, all biases should simultaneously have a small contribution, <i>i.e.</i> be far from the barrier. This becomes combinatorially unlikely as the number of Mg<sup>2+</sup> increases.</details>
 

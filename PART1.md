@@ -11,7 +11,6 @@ We make the assumption that the binding dynamics are well described by the two f
 > <details><summary><b>Q:</b> Are the two non-bridging oxygen atoms of the phosphate group strictly equivalent?</summary>
 > <b>A:</b> No because of the chirality of both flanking nucleosides. However they have similar local environment and, for simplicity, the chosen CV does not distinguish between them.</details>
 
-</br>
 
 > [!NOTE]
 > We could also simply use the distance between Mg<sup>2+</sup> and the *closest* O<sub>P</sub>, but it turns out convenient to treat both exchanging ligands in a similar way and has the additional advantage to allow binding to multiple O<sub>P</sub> in complex RNA motifs.
@@ -20,7 +19,7 @@ To be used as biasing CVs, the coordination numbers are defined as smooth functi
 
 $$
 \begin{equation}
-n_\mathrm{O_x} = \sum_{\lbrace\mathrm{O_x}\rbrace} s(r_\mathrm{Mg\textnormal{–}O_x})
+n_\mathrm{O_x} = \sum_{\lbrace\mathrm{O_x}\rbrace} s(r_\mathrm{Mg\mbox{–}O_x})
 \end{equation}
 $$
 
@@ -87,7 +86,7 @@ gmx grompp -f run.mdp -p topol.top -c input.gro -o run.tpr -maxwarn 1
    > q
    > ```
    > To use in a PLUMED file:
-   > ```plumed
+   > ```
    > ow: GROUP NDX_FILE=index.ndx NDX_GROUP=O_Water
    > ```
    > Another way is to use the [```MOLINFO```](https://www.plumed.org/doc-v2.9/user-doc/html/_m_o_l_i_n_f_o.html) selection features.

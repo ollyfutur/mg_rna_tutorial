@@ -1,3 +1,13 @@
+# Enhanced sampling for magnesium-RNA binding dynamics
+
+This tutorial will teach you how to use PLUMED, GROMACS and Python notebooks to implement an enhanced sampling strategy for magnesium-RNA binding dynamics.
+
+## Prerequisites
+
+- [GROMACS basic usage](http://www.mdtutorials.com/gmx/)
+- [PLUMED basic syntax and analysis](https://www.plumed-tutorials.org/lessons/21/001/data/NAVIGATION.html)
+- Python notebooks
+
 ```mermaid
 flowchart LR
 intro[Introduction]
